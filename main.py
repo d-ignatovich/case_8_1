@@ -1,4 +1,5 @@
 import turtle as t
+t.speed(1000)
 
 #Рисунок_1 Параметры подогнать
 def square(a):
@@ -36,7 +37,6 @@ def koch_main():
     t.up()
     t.goto(-100,0)
     t.down()
-    t.speed(1000)
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     koch(n, a)
