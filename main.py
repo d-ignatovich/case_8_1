@@ -4,7 +4,7 @@ Developers:   Ignatovich D. (60%),
               Poylova E. (40%)
 """
 import turtle as t
-import math
+
 t.speed(1000)
 t.up()
 t.goto(0, -100)
@@ -99,34 +99,23 @@ def koch_snowflake_main():
         t.right(120)
  
 # Двоичное дерево
-def tree(n, side):
-    t.down()
-    if n == 0:
-        t.forward(side * 0.70)
-        t.backward(side * 0.70)
+t.penup()
+t.setposition(0, -300)
+t.left(90)
+t.pendown()
+def tree(n, size):
+    if size == 0:
+        return
     else:
-        t.forward(side)
-        t.right(30)
-        tree(n - 1, side * 0.70)
-        t.left(60)
-        tree(n - 1, side * 0.70)
-        t.right(30)
-        t.backward(side)
-def main_tree(n, side):
-        x = 0
-        y = side
-        for i in range(n + 1):
-            if i % 2 == 0:
-                x += y
-            else:
-                x += y * math.sqrt(3)/2
-            y *= 0.70
-        t.up()
-        t.sety(-x/2)
-        t.setheading(90)
-        return tree(n, side)
-
-main_tree(4, 200)
+        t.forward(n)
+        t.left(30)
+        tree((n * 0.6), size - 1)
+        t.right(60)
+        tree((n * 0.6), size - 1)
+        t.left(30)
+        t.back(n)
+tree(200, 5) #пример вывода
+t.done()
 
 #Main
 print('Выбирете рисунок:', '1)Квадрат', '2)Двоичное дерево', '3)Фрактал "Ветка"', '4)Кривая Коха', '5)Снежинка Коха', '6)Кривая Минковского', '7)"Ледяные" фракталы', '8)Кривая Леви', '9)Фрактал Дракон Хартера-Хейтуэя', sep='\n')
