@@ -19,7 +19,34 @@ def square_main():
     side = float(input('Введите длину стороны квадрата: '))
     square(side)
 
+#Фрактал Ветка Рисунок 3    
+def branch(n, size):
+    if n == 0:
+        t.left(180)
+        return
 
+    x = size/(n+1)
+    for i in range(n):
+        t.forward(x)
+        t.left(45)
+        branch(n-i-1, 0.5*x*(n-i-1))
+        t.left(90)
+        branch(n-i-1, 0.5*x*(n-i-1))
+        t.right(135)
+
+    t.forward(x)
+    t.left(180)
+    t.forward(size)
+
+def branch_main():
+    t.up()
+    t.goto(0,-100)
+    t.left(90)
+    t.down()
+    n = int(input('Введите глубиину рекурсии: '))
+    size = int(input('Введите длину строны: '))
+    branch(n,size)
+    
 #Кривая Коха 
 def koch(order, size):
     if order == 0:
