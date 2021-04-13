@@ -90,7 +90,6 @@ def koch_snowflake_main():
     t.up()
     t.goto(-100,0)
     t.down()
-    t.speed(1000)
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     for _ in range(3):
