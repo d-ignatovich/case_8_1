@@ -52,7 +52,7 @@ def branch_main():
     size = int(input('Введите длину строны: '))
     branch(n,size)
     
-#Кривая Коха 
+#Кривая Коха Рисунок 4
 def koch(order, size):
     if order == 0:
         t.forward(size)
@@ -73,3 +73,26 @@ def koch_main():
     a = int(input('Длина стороны:'))
     koch(n, a)
 
+#Снежинка Коха Рисунок 5
+def koch_snowflake(order, size):
+    if order == 0:
+        t.forward(size)
+    else:
+        koch_snowflake(order-1, size/3)
+        t.left(60)
+        koch_snowflake(order-1, size/3)
+        t.right(120)
+        koch_snowflake(order-1, size/3)
+        t.left(60)
+        koch_snowflake(order-1, size/3)
+
+def koch_snowflake_main():
+    t.up()
+    t.goto(-100,0)
+    t.down()
+    t.speed(1000)
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    for _ in range(3):
+        koch_snowflake(n, a)
+        t.right(120)
