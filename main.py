@@ -20,7 +20,7 @@ def square_main():
     square(side)
 
 
-#Кривая Коха
+#Кривая Коха 
 def koch(order, size):
     if order == 0:
         t.forward(size)
