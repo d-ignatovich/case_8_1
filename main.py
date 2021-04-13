@@ -1,3 +1,8 @@
+"""Case-study 
+Developers:   Ignatovich D. (60%),
+              Miller A. (30%),
+              Poylova E. (40%)
+"""
 import turtle as t
 t.speed(1000)
 
