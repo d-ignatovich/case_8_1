@@ -117,6 +117,34 @@ def tree(n, size):
 tree(200, 5) #пример вывода
 t.done()
 
+#Фрактал Дракон Хартера-Хейтуэя Рисунок 9
+def dragon_left(order, size):
+    if order == 0:
+        t.forward(size)
+    else:
+        t.left(45)
+        dragon_left(order - 1, size*(2**0.5)/2)
+        t.right(90)
+        dragon_right(order - 1, size*(2**0.5)/2)
+        t.left(45)
+
+def dragon_right(order, size):
+    if order == 0:
+        t.forward(size)
+    else:
+        t.right(45)
+        dragon_left(order - 1, size*(2**0.5)/2)
+        t.left(90)
+        dragon_right(order - 1, size*(2**0.5)/2)
+        t.right(45)
+
+
+def dragon_main():
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    dragon_left(n, a)
+    
+    
 #Main
 print('Выбирете рисунок:', '1)Квадрат', '2)Двоичное дерево', '3)Фрактал "Ветка"', '4)Кривая Коха', '5)Снежинка Коха', '6)Кривая Минковского', '7)"Ледяные" фракталы', '8)Кривая Леви', '9)Фрактал Дракон Хартера-Хейтуэя', sep='\n')
 picture = int(input())
