@@ -97,7 +97,28 @@ def koch_snowflake_main():
     for _ in range(3):
         koch_snowflake(n, a)
         t.right(120)
- 
+
+# Кривая Минковского Рисунок 6
+
+def curve_minkowski(size, n):
+    if n == 0:
+        t.forward(size * 3)
+    else:
+        curve_minkowski(size / 3, n - 1)
+        t.left(90)
+        curve_minkowski(size / 3, n - 1)
+        t.right(90)
+        curve_minkowski(size / 3, n - 1)
+        t.right(90)
+        curve_minkowski(size / 3, n - 1)
+        curve_minkowski(size / 3, n - 1)
+        t.left(90)
+        curve_minkowski(size / 3, n - 1)
+        t.left(90)
+        curve_minkowski(size / 3, n - 1)
+        t.right(90)
+        curve_minkowski(size / 3, n - 1)
+
 # Двоичное дерево Рисунок 2
 
 def tree(size, n):
