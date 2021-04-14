@@ -98,25 +98,28 @@ def koch_snowflake_main():
         koch_snowflake(n, a)
         t.right(120)
  
-# Двоичное дерево
-t.penup()
-t.setposition(0, -300)
-t.left(90)
-t.pendown()
-def tree(n, size):
-    if size == 0:
+# Двоичное дерево Рисунок 2
+
+def tree(size, n):
+    if n == 0:
         return
     else:
-        t.forward(n)
+        t.forward(size)
         t.left(30)
-        tree((n * 0.6), size - 1)
+        tree((size * 0.6), n - 1)
         t.right(60)
-        tree((n * 0.6), size - 1)
+        tree((size * 0.6), n - 1)
         t.left(30)
-        t.back(n)
-tree(200, 5) #пример вывода
-t.done()
-
+        t.back(size)
+        
+        
+def tree_main():
+    t.left(90)
+    n = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+    tree(size, n)
+    
+    
 #Фрактал Дракон Хартера-Хейтуэя Рисунок 9
 def dragon_left(order, size):
     if order == 0:
@@ -141,8 +144,8 @@ def dragon_right(order, size):
 
 def dragon_main():
     n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    dragon_left(n, a)
+    size = int(input('Длина стороны:'))
+    dragon_left(n, size)
     
     
 #Main
@@ -151,7 +154,7 @@ picture = int(input())
 if picture == 1:
     square_main()
 elif picture == 2:
-    square_main()
+    tree_main()
 elif picture == 3:
     branch_main()
 elif picture == 4:
@@ -165,4 +168,8 @@ elif picture == 7:
 elif picture == 8:
     square_main()
 elif picture == 9:
-    square_main()
+    dragon_main()
+
+    
+t.hideturtle()
+t.done()
