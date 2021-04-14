@@ -19,10 +19,10 @@ def square(a):
         t.forward(a)
         t.right(90)
     t.up()
-    t.right(15)
-    t.forward(a / 8)
+    t.right(12)
+    t.forward(a / 7.5)
 
-    return (square(a * 0.9))
+    return (square(a * 0.89))
 
 
 def square_main():
