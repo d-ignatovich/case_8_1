@@ -139,8 +139,19 @@ def tree_main():
     n = int(input('Глубина рекурсии:'))
     size = int(input('Длина стороны:'))
     tree(size, n)
-    
-    
+
+   
+# Кривая Леви Рисунок 8
+def levy_curve(size, n):
+    if n == 0:
+        turtle.forward(size * 4)
+        return
+    turtle.left(45)
+    levy_curve(size / 3, n - 1)
+    turtle.right(90)
+    levy_curve(size / 3, n - 1)
+    turtle.left(45)
+
 #Фрактал Дракон Хартера-Хейтуэя Рисунок 9
 def dragon_left(order, size):
     if order == 0:
