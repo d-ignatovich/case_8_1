@@ -1,7 +1,7 @@
 """Case-study
 Developers:   Ignatovich D. (60%),
               Miller A. (45%),
-              Poylova E. (40%)
+              Poylova E. (50%)
 """
 import turtle as t
 
@@ -178,6 +178,123 @@ def dragon_main():
     n = int(input('Глубина рекурсии:'))
     size = int(input('Длина стороны:'))
     dragon_left(n, size)
+ 
+# Ледяной фрактал Рисунок 1
+def ice(n,a):
+    if n == 0:
+        t.forward(a)
+    else:
+        ice(n-1, a / 2)
+        t.left(90)
+        ice(n - 1, a / 4)
+        t.right(180)
+        ice(n - 1, a / 4)
+        t.left(90)
+        ice(n - 1, a /2)
+
+
+def ice_main():
+    t.up()
+    t.goto(-100, 0)
+    t.down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    ice(n, a)
+
+ice_main()
+
+# Ледяной фрактал Рисунок 2
+def snow(n,a):
+    if n == 0:
+        t.forward(a)
+    else:
+        snow(n-1, a / 2)
+        t.left(120)
+        snow(n - 1, a / 4)
+        t.right(180)
+        snow(n - 1, a / 4)
+        t.left(120)
+        snow(n - 1, a / 4)
+        t.right(180)
+        snow(n - 1, a / 4)
+        t.left(120)
+        snow(n - 1, a / 2)
+
+
+def snow_main():
+    t.up()
+    t.goto(-100, 0)
+    t.down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    snow(n, a)
+
+snow_main()
+
+# Ледяной фрактал Рисунок 3
+def ice_snowflake(n, a):
+    if n == 0:
+        t.forward(a)
+    else:
+        ice_snowflake(n-1, a / 2)
+        t.left(90)
+        ice_snowflake(n - 1, a / 4)
+        t.right(180)
+        ice_snowflake(n - 1, a / 4)
+        t.left(90)
+        ice_snowflake(n - 1, a / 2)
+
+
+def ice_snowflake_main():
+    t.up()
+    t.goto(-100, 0)
+    t.down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    for _ in range(3):
+        ice_snowflake(n, a)
+        t.right(120)
+    t.right(60)
+    for _ in range(3):
+        ice_snowflake(n, a)
+        t.left(120)
+
+ice_snowflake_main()
+
+# Ледяной фрактал Рисунок 4
+def flake_of_snow(n,a):
+    if n == 0:
+        t.forward(a)
+    else:
+        flake_of_snow(n-1, a/2)
+        t.left(120)
+        flake_of_snow(n - 1, a / 4)
+        t.right(180)
+        flake_of_snow(n - 1, a / 4)
+        t.left(120)
+        flake_of_snow(n - 1, a / 4)
+        t.right(180)
+        flake_of_snow(n - 1, a / 4)
+        t.left(120)
+        flake_of_snow(n - 1, a /2)
+
+
+def flake_of_snow_main():
+    t.up()
+    t.goto(-100, 0)
+    t.down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    for _ in range(3):
+        flake_of_snow(n, a)
+        t.right(120)
+    t.right(60)
+    for _ in range(3):
+        flake_of_snow(n, a)
+        t.left(120)
+    
+
+flake_of_snow_main()
     
     
 #Main
