@@ -5,10 +5,6 @@ Developers:   Ignatovich D. (60%),
 """
 import turtle as t
 
-t.speed(1000)
-t.up()
-t.goto(0, -100)
-t.down()
 
 # Square picture 1
 def square(a):
@@ -292,6 +288,11 @@ def flake_of_snow_main():
 
     
 #Main
+t.speed(1000)
+t.up()
+t.goto(0, -100)
+t.down()
+
 print('Choose a drawing:', '1)Square', '2)Binary tree', '3)"Branch" Fractal', '4)Koch Curve', "5)Koch's Snowflake",
       '6)Minkowski Curve', '7)Ice fractals', '8)Levy Curve', "9)Harter-Haythaway's Dragon Fractal", sep='\n')
 picture = int(input())
