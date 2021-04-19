@@ -29,6 +29,28 @@ def square_main():
     side = float(input('Введите длину стороны квадрата: '))
     square(side)
 
+    
+# Двоичное дерево Рисунок 2
+
+def tree(size, n):
+    if n == 0:
+        return
+    else:
+        t.forward(size)
+        t.left(30)
+        tree((size * 0.6), n - 1)
+        t.right(60)
+        tree((size * 0.6), n - 1)
+        t.left(30)
+        t.back(size)
+        
+        
+def tree_main():
+    t.left(90)
+    n = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+    tree(size, n)
+
 
 # Фрактал Ветка Рисунок 3
 def branch(n, size):
@@ -124,27 +146,6 @@ def main_curve_minkowski():
     n = int(input('Глубина рекурсии:'))
     size = int(input('Длина стороны:'))
     curve_minkowski(size, n)
-
-# Двоичное дерево Рисунок 2
-
-def tree(size, n):
-    if n == 0:
-        return
-    else:
-        t.forward(size)
-        t.left(30)
-        tree((size * 0.6), n - 1)
-        t.right(60)
-        tree((size * 0.6), n - 1)
-        t.left(30)
-        t.back(size)
-        
-        
-def tree_main():
-    t.left(90)
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
-    tree(size, n)
 
    
 # Кривая Леви Рисунок 8
