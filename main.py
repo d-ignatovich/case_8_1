@@ -158,6 +158,12 @@ def levy_curve(size, n):
     turtle.right(90)
     levy_curve(size / 3, n - 1)
     turtle.left(45)
+    
+    
+def main_levy_curve():
+    n = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+    tree(size, n)
 
 # The Harter-Haythaway Dragon Fractal picture 9
 def dragon_left(order, size):
