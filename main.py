@@ -17,8 +17,7 @@ def square(a):
     t.up()
     t.right(12)
     t.forward(a / 7.5)
-
-    return (square(a * 0.89))
+    return square(a * 0.89)
 
 
 def square_main():
