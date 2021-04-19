@@ -118,6 +118,12 @@ def curve_minkowski(size, n):
         curve_minkowski(size / 3, n - 1)
         t.right(90)
         curve_minkowski(size / 3, n - 1)
+        
+        
+def main_curve_minkowski():
+    n = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+    curve_minkowski(size, n)
 
 # Двоичное дерево Рисунок 2
 
