@@ -151,13 +151,13 @@ def main_curve_minkowski():
 # Levy Curve picture 8
 def levy_curve(size, n):
     if n == 0:
-        turtle.forward(size * 4)
+        t.forward(size * 4)
         return
-    turtle.left(45)
+    t.left(45)
     levy_curve(size / 3, n - 1)
-    turtle.right(90)
+    t.right(90)
     levy_curve(size / 3, n - 1)
-    turtle.left(45)
+    t.left(45)
     
     
 def main_levy_curve():
