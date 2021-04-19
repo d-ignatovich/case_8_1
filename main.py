@@ -10,7 +10,7 @@ t.up()
 t.goto(0, -100)
 t.down()
 
-# Рисунок_1 Параметры подогнать
+# Square picture 1
 def square(a):
     if a < 10:
         return
@@ -30,7 +30,7 @@ def square_main():
     square(side)
 
     
-# Двоичное дерево Рисунок 2
+# Binary tree picture 2
 
 def tree(size, n):
     if n == 0:
@@ -52,7 +52,7 @@ def tree_main():
     tree(size, n)
 
 
-# Фрактал Ветка Рисунок 3
+# Fractal Branch picture 3
 def branch(n, size):
     if n == 0:
         t.left(180)
@@ -79,7 +79,7 @@ def branch_main():
     branch(n, size)
 
 
-# Кривая Коха Рисунок 4
+# Koch Curve picture 4
 def koch(order, size):
     if order == 0:
         t.forward(size)
@@ -99,7 +99,7 @@ def koch_main():
     koch(n, a)
 
 
-# Снежинка Коха Рисунок 5
+# Koch's Snowflake picture 5
 def koch_snowflake(order, size):
     if order == 0:
         t.forward(size)
@@ -120,7 +120,7 @@ def koch_snowflake_main():
         koch_snowflake(n, a)
         t.right(120)
 
-# Кривая Минковского Рисунок 6
+# Minkowski Curve picture 6
 
 def curve_minkowski(size, n):
     if n == 0:
@@ -148,7 +148,7 @@ def main_curve_minkowski():
     curve_minkowski(size, n)
 
    
-# Кривая Леви Рисунок 8
+# Levy Curve picture 8
 def levy_curve(size, n):
     if n == 0:
         turtle.forward(size * 4)
@@ -159,7 +159,7 @@ def levy_curve(size, n):
     levy_curve(size / 3, n - 1)
     turtle.left(45)
 
-#Фрактал Дракон Хартера-Хейтуэя Рисунок 9
+# The Harter-Haythaway Dragon Fractal picture 9
 def dragon_left(order, size):
     if order == 0:
         t.forward(size)
@@ -186,36 +186,31 @@ def dragon_main():
     size = int(input('Длина стороны:'))
     dragon_left(n, size)
  
-# Ледяной фрактал Рисунок 1
-def ice(n,a):
+# Ice fractal picture 1
+def ice(n, a):
     if n == 0:
         t.forward(a)
     else:
-        ice(n-1, a / 2)
+        ice(n - 1, a / 2)
         t.left(90)
         ice(n - 1, a / 4)
         t.right(180)
         ice(n - 1, a / 4)
         t.left(90)
-        ice(n - 1, a /2)
+        ice(n - 1, a / 2)
 
 
 def ice_main():
-    t.up()
-    t.goto(-100, 0)
-    t.down()
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     ice(n, a)
 
-ice_main()
-
-# Ледяной фрактал Рисунок 2
-def snow(n,a):
+# Ice fractal picture 2
+def snow(n, a):
     if n == 0:
         t.forward(a)
     else:
-        snow(n-1, a / 2)
+        snow(n - 1, a / 2)
         t.left(120)
         snow(n - 1, a / 4)
         t.right(180)
@@ -229,21 +224,17 @@ def snow(n,a):
 
 
 def snow_main():
-    t.up()
-    t.goto(-100, 0)
-    t.down()
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     snow(n, a)
 
-snow_main()
 
-# Ледяной фрактал Рисунок 3
+# Ice fractal picture 3
 def ice_snowflake(n, a):
     if n == 0:
         t.forward(a)
     else:
-        ice_snowflake(n-1, a / 2)
+        ice_snowflake(n - 1, a / 2)
         t.left(90)
         ice_snowflake(n - 1, a / 4)
         t.right(180)
@@ -253,9 +244,6 @@ def ice_snowflake(n, a):
 
 
 def ice_snowflake_main():
-    t.up()
-    t.goto(-100, 0)
-    t.down()
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     for _ in range(3):
@@ -266,14 +254,13 @@ def ice_snowflake_main():
         ice_snowflake(n, a)
         t.left(120)
 
-ice_snowflake_main()
 
-# Ледяной фрактал Рисунок 4
-def flake_of_snow(n,a):
+# Ice fractal picture 4
+def flake_of_snow(n, a):
     if n == 0:
         t.forward(a)
     else:
-        flake_of_snow(n-1, a/2)
+        flake_of_snow(n - 1, a / 2)
         t.left(120)
         flake_of_snow(n - 1, a / 4)
         t.right(180)
@@ -283,13 +270,10 @@ def flake_of_snow(n,a):
         t.right(180)
         flake_of_snow(n - 1, a / 4)
         t.left(120)
-        flake_of_snow(n - 1, a /2)
+        flake_of_snow(n - 1, a / 2)
 
 
 def flake_of_snow_main():
-    t.up()
-    t.goto(-100, 0)
-    t.down()
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     for _ in range(3):
@@ -299,13 +283,11 @@ def flake_of_snow_main():
     for _ in range(3):
         flake_of_snow(n, a)
         t.left(120)
-    
 
-flake_of_snow_main()
-    
     
 #Main
-print('Выбирете рисунок:', '1)Квадрат', '2)Двоичное дерево', '3)Фрактал "Ветка"', '4)Кривая Коха', '5)Снежинка Коха', '6)Кривая Минковского', '7)"Ледяные" фракталы', '8)Кривая Леви', '9)Фрактал Дракон Хартера-Хейтуэя', sep='\n')
+print('Choose a drawing:', '1)Square', '2)Binary tree', '3)"Branch" Fractal', '4)Koch Curve', "5)Koch's Snowflake",
+      '6)Minkowski Curve', '7)Ice fractals', '8)Levy Curve', "9)Harter-Haythaway's Dragon Fractal", sep='\n')
 picture = int(input())
 if picture == 1:
     square_main()
@@ -318,13 +300,22 @@ elif picture == 4:
 elif picture == 5:
     koch_snowflake_main()
 elif picture == 6:
-    square_main()
+    main_curve_minkowski()
 elif picture == 7:
-    square_main()
+    x = int(input('Choose an ice fractal pattern from 1 to 4: '))
+    if x == 1:
+        ice_main()
+    elif x == 2:
+        snow_main()
+    elif x == 3:
+        ice_snowflake_main()
+    elif x == 4:
+        flake_of_snow_main()
 elif picture == 8:
-    square_main()
+    main_levy_curve()
 elif picture == 9:
     dragon_main()
+
 
     
 t.hideturtle()
