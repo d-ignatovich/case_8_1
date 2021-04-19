@@ -26,7 +26,7 @@ def square(a):
 
 
 def square_main():
-    side = float(input('Введите длину стороны квадрата: '))
+    side = float(input('Enter the length of the side of the square: '))
     square(side)
 
     
@@ -47,8 +47,8 @@ def tree(size, n):
         
 def tree_main():
     t.left(90)
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     tree(size, n)
 
 
@@ -74,8 +74,8 @@ def branch(n, size):
 
 def branch_main():
     t.left(90)
-    n = int(input('Введите глубиину рекурсии: '))
-    size = int(input('Введите длину строны: '))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     branch(n, size)
 
 
@@ -94,9 +94,9 @@ def koch(order, size):
 
 
 def koch_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    koch(n, a)
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
+    koch(n, size)
 
 
 # Koch's Snowflake picture 5
@@ -114,10 +114,10 @@ def koch_snowflake(order, size):
 
 
 def koch_snowflake_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     for _ in range(3):
-        koch_snowflake(n, a)
+        koch_snowflake(n, size)
         t.right(120)
 
 # Minkowski Curve picture 6
@@ -143,8 +143,8 @@ def curve_minkowski(size, n):
         
         
 def main_curve_minkowski():
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     curve_minkowski(size, n)
 
    
@@ -182,8 +182,8 @@ def dragon_right(order, size):
 
 
 def dragon_main():
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     dragon_left(n, size)
  
 # Ice fractal picture 1
@@ -201,9 +201,9 @@ def ice(n, a):
 
 
 def ice_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    ice(n, a)
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
+    ice(n, size)
 
 # Ice fractal picture 2
 def snow(n, a):
@@ -224,9 +224,9 @@ def snow(n, a):
 
 
 def snow_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    snow(n, a)
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
+    snow(n, size)
 
 
 # Ice fractal picture 3
@@ -244,14 +244,14 @@ def ice_snowflake(n, a):
 
 
 def ice_snowflake_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     for _ in range(3):
-        ice_snowflake(n, a)
+        ice_snowflake(n, size)
         t.right(120)
     t.right(60)
     for _ in range(3):
-        ice_snowflake(n, a)
+        ice_snowflake(n, size)
         t.left(120)
 
 
@@ -274,14 +274,14 @@ def flake_of_snow(n, a):
 
 
 def flake_of_snow_main():
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
     for _ in range(3):
-        flake_of_snow(n, a)
+        flake_of_snow(n, size)
         t.right(120)
     t.right(60)
     for _ in range(3):
-        flake_of_snow(n, a)
+        flake_of_snow(n, size)
         t.left(120)
 
     
