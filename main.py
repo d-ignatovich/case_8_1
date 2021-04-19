@@ -27,7 +27,6 @@ def square_main():
 
     
 # Binary tree picture 2
-
 def tree(size, n):
     if n == 0:
         return
@@ -116,8 +115,8 @@ def koch_snowflake_main():
         koch_snowflake(n, size)
         t.right(120)
 
+        
 # Minkowski Curve picture 6
-
 def curve_minkowski(size, n):
     if n == 0:
         t.forward(size * 3)
@@ -161,6 +160,7 @@ def main_levy_curve():
     size = int(input('Длина стороны:'))
     tree(size, n)
 
+    
 # The Harter-Haythaway Dragon Fractal picture 9
 def dragon_left(order, size):
     if order == 0:
@@ -188,6 +188,7 @@ def dragon_main():
     size = int(input('Side length: '))
     dragon_left(n, size)
  
+
 # Ice fractal picture 1
 def ice(n, a):
     if n == 0:
@@ -207,6 +208,7 @@ def ice_main():
     size = int(input('Side length: '))
     ice(n, size)
 
+    
 # Ice fractal picture 2
 def snow(n, a):
     if n == 0:
@@ -322,7 +324,6 @@ elif picture == 8:
     main_levy_curve()
 elif picture == 9:
     dragon_main()
-
 
     
 t.hideturtle()
