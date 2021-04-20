@@ -155,9 +155,9 @@ def levy_curve(size, n):
     
     
 def main_levy_curve():
-    n = int(input('Глубина рекурсии:'))
-    size = int(input('Длина стороны:'))
-    tree(size, n)
+    n = int(input('Recursion depth: '))
+    size = int(input('Side length: '))
+    levy_curve(size, n)
 
     
 # The Harter-Haythaway Dragon Fractal picture 9
